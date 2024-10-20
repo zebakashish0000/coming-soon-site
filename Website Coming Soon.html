@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Coming Soon</title>
+    <link href="./Website Coming Soon_files/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+
+<img src="./Website Coming Soon_files/logo.png" class="logo">
+<div class="content">
+    <p>Website is under maintenance</p>
+    <h1>We' re <span>Launching </span> Soon</h1>
+
+<div class="launch-time">
+<div>
+    <p id="days">82</p>
+    <span>days</span>
+</div>
+<div>
+    <p id="hours">5</p>
+    <span>Hours</span>
+</div>
+<div>
+    <p id="minutes">38</p>
+    <span>Minutes</span>
+</div>
+<div>
+    <p id="seconds">9</p>
+    <span>Seconds</span>
+</div>
+
+
+</div>
+
+    <button type="button">Learn More <img src="./Website Coming Soon_files/triangle.png"></button>
+</div>
+<img src="./Website Coming Soon_files/rocket.png" class="rocket">
+    </div>
+    <script>
+      var countDownDate = new Date("December 1 , 2024 00:00:00").getTime();
+       var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance= countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+         
+      if(distance < 0){
+            clearInterval(x);
+            document.getElementById("days").innerHTML =  "00";
+      document.getElementById("hours").innerHTML =  "00";
+      document.getElementById("minutes").innerHTML =  "00";
+      document.getElementById("seconds").innerHTML =  "00";
+      }
+        
+      
+       },1000);
+
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
